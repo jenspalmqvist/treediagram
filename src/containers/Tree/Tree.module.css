@@ -1,0 +1,9 @@
+.Tree {
+  height: 100%;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.Tree p {
+  margin: 0;
+}

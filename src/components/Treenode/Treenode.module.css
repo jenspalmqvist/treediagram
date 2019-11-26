@@ -1,0 +1,22 @@
+.TreenodeWrapper {
+  display: inline-block;
+  /* box-shadow: 0 0 0 1px red; */
+  vertical-align: top;
+}
+
+.Treenode {
+  background: #ffffff;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.Treenode p {
+  margin: 0;
+}
+
+.TreenodeChildrenWrapper {
+  display: inline-block;
+}
