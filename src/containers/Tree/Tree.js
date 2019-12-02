@@ -5,22 +5,25 @@ import classes from './Tree.module.css';
 
 const nodes = {
   id: 0,
-  title: 'node 1 -> root',
+  title: 'Treenode',
+  status: 'failed',
   children: [
     {
       parentid: 0,
       id: 1,
-      title: 'node 2 -> parent 1',
+      title: 'Treenode',
+      status: 'success',
       children: [
-        { parentid: 1, id: 2, title: 'node 4 -> parent 2' },
+        { parentid: 1, id: 2, title: 'Treenode', status: 'success' },
         {
           parentid: 1,
           id: 3,
-          title: 'node 5 -> parent 2',
+          title: 'Treenode',
+          status: 'success',
           children: [
-            { parentid: 3, id: 4, title: 'node 7 -> parent 7 -> parent 2' },
-            { parentid: 3, id: 5, title: 'node 7 -> parent 7 -> parent 3' },
-            { parentid: 3, id: 6, title: 'node 7 -> parent 7 -> parent 4' }
+            { parentid: 3, id: 4, title: 'Treenode', status: 'success' },
+            { parentid: 3, id: 5, title: 'Treenode', status: 'success' },
+            { parentid: 3, id: 6, title: 'Treenode', status: 'success' }
           ]
         }
       ]
@@ -28,17 +31,19 @@ const nodes = {
     {
       parentid: 0,
       id: 7,
-      title: 'node 2 -> parent 1',
+      title: 'Treenode',
+      status: '',
       children: [
-        { parentid: 7, id: 8, title: 'node 4 -> parent 2' },
+        { parentid: 7, id: 8, title: 'Treenode', status: 'success' },
         {
           parentid: 7,
           id: 9,
-          title: 'node 5 -> parent 2',
+          title: 'Treenode',
+          status: '',
           children: [
-            { parentid: 9, id: 10, title: 'node 7 -> parent 7 -> parent 2' },
-            { parentid: 9, id: 11, title: 'node 7 -> parent 7 -> parent 3' },
-            { parentid: 9, id: 12, title: 'node 7 -> parent 7 -> parent 4' }
+            { parentid: 9, id: 10, title: 'Treenode', status: 'success' },
+            { parentid: 9, id: 11, title: 'Treenode', status: 'success' },
+            { parentid: 9, id: 12, title: 'Treenode' }
           ]
         }
       ]
@@ -46,24 +51,28 @@ const nodes = {
     {
       parentid: 0,
       id: 13,
-      title: 'node 3 -> parent 1',
+      title: 'Treenode',
+      status: 'failed',
       children: [
-        { parentid: 13, id: 14, title: 'node 5 -> parent 3 -> parent 1' },
-        { parentid: 13, id: 18, title: 'node 5 -> parent 3 -> parent 1' },
+        { parentid: 13, id: 14, title: 'Treenode', status: 'success' },
+        { parentid: 13, id: 18, title: 'Treenode', status: 'success' },
         {
           parentid: 13,
           id: 19,
-          title: 'node 5 -> parent 3 -> parent 1',
+          title: 'Treenode',
+          status: 'failed',
           children: [
             {
               parentid: 19,
               id: 20,
-              title: 'node 5 -> parent 3 -> parent 1',
+              title: 'Treenode',
+              status: 'failed',
               children: [
                 {
                   parentid: 20,
                   id: 21,
-                  title: 'node 5 -> parent 3 -> parent 1',
+                  title: 'Treenode',
+                  status: 'failed',
                   children: [
                   ]
                 }
@@ -71,32 +80,32 @@ const nodes = {
             }
           ]
         },
-        { parentid: 13, id: 15, title: 'node 5 -> parent 3 -> parent 1' },
-        { parentid: 13, id: 16, title: 'node 5 -> parent 3 -> parent 1' },
-        { parentid: 13, id: 17, title: 'node 5 -> parent 3 -> parent 1' },
+        { parentid: 13, id: 15, title: 'Treenode', status: 'success' },
+        { parentid: 13, id: 16, title: 'Treenode', status: 'success' },
+        { parentid: 13, id: 17, title: 'Treenode', status: 'success' },
       ]
     },
     // {
     //   parentid: 0,
     //   id: 38,
-    //   title: 'node 3 -> parent 1',
+    //   title: 'Treenode',
     //   children: [
-    //     { parentid: 38, id: 22, title: 'node 5 -> parent 3 -> parent 1' },
-    //     { parentid: 38, id: 23, title: 'node 5 -> parent 3 -> parent 1' },
+    //     { parentid: 38, id: 22, title: 'Treenode' },
+    //     { parentid: 38, id: 23, title: 'Treenode' },
     //     {
     //       parentid: 38,
     //       id: 24,
-    //       title: 'node 5 -> parent 3 -> parent 1',
+    //       title: 'Treenode',
     //       children: [
     //         {
     //           parentid: 24,
     //           id: 25,
-    //           title: 'node 5 -> parent 3 -> parent 1',
+    //           title: 'Treenode',
     //           children: [
     //             {
     //               parentid: 25,
     //               id: 26,
-    //               title: 'node 5 -> parent 3 -> parent 1',
+    //               title: 'Treenode',
     //               children: [
     //               ]
     //             }
@@ -104,9 +113,9 @@ const nodes = {
     //         }
     //       ]
     //     },
-    //     { parentid: 38, id: 27, title: 'node 5 -> parent 3 -> parent 1' },
-    //     { parentid: 38, id: 28, title: 'node 5 -> parent 3 -> parent 1' },
-    //     { parentid: 38, id: 29, title: 'node 5 -> parent 3 -> parent 1' },
+    //     { parentid: 38, id: 27, title: 'Treenode' },
+    //     { parentid: 38, id: 28, title: 'Treenode' },
+    //     { parentid: 38, id: 29, title: 'Treenode' },
     //   ]
     // },
   ]

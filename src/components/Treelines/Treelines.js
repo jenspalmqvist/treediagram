@@ -25,9 +25,9 @@ const Treelines = ({ nodes }) => {
     const xstart = parentNodeWrapperRect.left;
     const ystart = nodeWrapperRect.top - 20;
     const x1 = parentNodeWrapperRect.width / 2;
-    const y1 = 2;
+    const y1 = 3;
     const x2 = nodeWrapperRect.left - parentNodeWrapperRect.left + nodeWrapperRect.width / 2;
-    const y2 = 38;
+    const y2 = 37;
 
     linesOutput.push(
       <Treeline

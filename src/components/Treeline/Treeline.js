@@ -25,7 +25,8 @@ const Treeline = (props) => {
           y1={Math.ceil(y1)}
           x2={Math.ceil(x2)}
           y2={Math.ceil(y2)}
-          stroke="#888"
+          stroke="#5E6C84"
+          stroke-dasharray="4,4"
         />
       </svg>
     </div>
