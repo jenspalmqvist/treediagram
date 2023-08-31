@@ -1,5 +1,5 @@
-import React from 'react';
-import Treeline from '../Treeline/Treeline';
+import React from "react";
+import Treeline from "../Treeline/Treeline";
 
 const Treelines = ({ nodes }) => {
   const getLines = (node) => {
@@ -9,7 +9,7 @@ const Treelines = ({ nodes }) => {
         linesOutputs.push(getLines(childNode));
       });
       return linesOutputs;
-    };
+    }
 
     const { parentid, id, children } = node;
 
@@ -17,7 +17,9 @@ const Treelines = ({ nodes }) => {
 
     const nodeWrapper = document.getElementById(`treenode_wrapper_${id}`);
     const nodeWrapperRect = nodeWrapper.getBoundingClientRect();
-    const parentNodeWrapper = document.getElementById(`treenode_wrapper_${parentid}`);
+    const parentNodeWrapper = document.getElementById(
+      `treenode_wrapper_${parentid}`
+    );
     const parentNodeWrapperRect = parentNodeWrapper.getBoundingClientRect();
 
     const width = parentNodeWrapperRect.width;
@@ -26,11 +28,15 @@ const Treelines = ({ nodes }) => {
     const ystart = nodeWrapperRect.top - 20;
     const x1 = parentNodeWrapperRect.width / 2;
     const y1 = 3;
-    const x2 = nodeWrapperRect.left - parentNodeWrapperRect.left + nodeWrapperRect.width / 2;
+    const x2 =
+      nodeWrapperRect.left -
+      parentNodeWrapperRect.left +
+      nodeWrapperRect.width / 2;
     const y2 = 37;
 
     linesOutput.push(
       <Treeline
+        key={id}
         id={`treeline_${id}`}
         width={width}
         height={height}
@@ -44,13 +50,13 @@ const Treelines = ({ nodes }) => {
     );
 
     if (children) {
-      children.forEach(childNode => linesOutput.push(getLines(childNode)));
+      children.forEach((childNode) => linesOutput.push(getLines(childNode)));
     }
 
     return linesOutput;
-  }
+  };
 
   return getLines(nodes);
-}
+};
 
 export default Treelines;
