@@ -1,7 +1,18 @@
 import React from "react";
 import classes from "./Treeline.module.css";
 
-const Treeline = (props) => {
+type TreelineProps = {
+  id: string;
+  width: number;
+  height: number;
+  xstart: number;
+  ystart: number;
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+};
+const Treeline = (props: TreelineProps) => {
   const { id, width, height, xstart, ystart, x1, y1, x2, y2 } = props;
 
   const svgStyle = {

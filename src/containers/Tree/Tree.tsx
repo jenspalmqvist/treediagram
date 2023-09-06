@@ -3,7 +3,14 @@ import Treenode from "../../components/Treenode/Treenode";
 import Treelines from "../../components/Treelines/Treelines";
 import classes from "./Tree.module.css";
 
-const nodes = {
+export type Node = {
+  parentid?: number;
+  id: number;
+  title: string;
+  status?: "failed" | "success" | "";
+  children?: Node[];
+};
+const nodes: Node = {
   id: 0,
   title: "Treenode",
   status: "failed",
@@ -120,7 +127,7 @@ const nodes = {
 };
 
 const Tree = () => {
-  const [lines, setLines] = useState([]);
+  const [lines, setLines] = useState<React.JSX.Element | null>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -135,7 +142,7 @@ const Tree = () => {
   return (
     <div className={classes.Tree}>
       <div>
-        <Treenode nodes={nodes} />
+        <Treenode node={nodes} />
         {lines}
       </div>
     </div>

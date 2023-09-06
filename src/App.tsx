@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import Tree from './containers/Tree/Tree';
+import React from "react";
+import "./App.css";
+import Tree from "./containers/Tree/Tree";
 
 function App() {
   return (

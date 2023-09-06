@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Treenode.module.css";
-const Treenode = ({ nodes }) => {
-  const { parentid, id, status, children } = nodes;
-  const [childrenOutput, setChildrenOutput] = useState([]);
+import { Node } from "../../containers/Tree/Tree";
+
+type TreenodeProps = { node: Node };
+
+const Treenode = ({ node }: TreenodeProps) => {
+  const { parentid, id, status, children } = node;
+  const [childrenOutput, setChildrenOutput] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    const tmpChildrenOutput = [];
+    const tmpChildrenOutput: JSX.Element[] = [];
     if (children && children.length > 0) {
       children.forEach((childNode) => {
         tmpChildrenOutput.push(
-          <Treenode key={childNode.id} nodes={childNode} />
+          <Treenode key={childNode.id} node={childNode} />
         );
       });
     }
